@@ -1,11 +1,5 @@
-require('dotenv').config()
 
 module.exports = {
-  chainWebpack: config => {
-    config
-      .plugin('env')
-      .use(require.resolve('webpack/lib/EnvironmentPlugin'), ['ASSURPACK_KEY'])
-  },
   plugins: [
     {
       use: '@gridsome/source-wordpress',

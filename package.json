@@ -10,6 +10,7 @@
     "@gridsome/source-wordpress": "^0.1.0",
     "bulma": "^0.7.2",
     "dotenv": "^6.2.0",
+    "dotenv-webpack": "^1.7.0",
     "eslint": "^5.12.1",
     "glidejs": "^2.1.0",
     "gridsome": "^0.4.5",
