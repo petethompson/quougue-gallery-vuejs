@@ -12,7 +12,6 @@ const slugify = function (str) {
 }
 
 module.exports = function (api) {
-  console.log(auth)
   api.loadSource(async store => {
     const homeslides = await axios.get('https://artcloudgalleryapi.azurewebsites.net//Artwork?tag=homepage', {
       headers: {
