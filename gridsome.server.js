@@ -1,5 +1,5 @@
 const axios = require('axios')
-const auth = process.env.ARTCLOUD_KEY
+const auth = process.env.ARTCLOUD_KEY ? process.env.ARTCLOUD_KEY : ARTCLOUD_KEY
 
 const slugify = function (str) {
   var name = str.toLowerCase();
