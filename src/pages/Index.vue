@@ -2,7 +2,6 @@
   <Layout>
     <HomeSlides/>
     <div class="content">
-      <div v-html="$page.wordPressPage.content" />
     </div>
   </Layout>
 </template>
