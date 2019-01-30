@@ -1,5 +1,5 @@
 const axios = require('axios')
-const auth = "artcloud 53f022d2483ddaed76bd96c6fb1d9f621514b4c7"
+const auth = process.env.ARTCLOUD_KEY
 
 const slugify = function (str) {
   var name = str.toLowerCase();
@@ -12,6 +12,7 @@ const slugify = function (str) {
 }
 
 module.exports = function (api) {
+  console.log(auth)
   api.loadSource(async store => {
     const homeslides = await axios.get('https://artcloudgalleryapi.azurewebsites.net//Artwork?tag=homepage', {
       headers: {
