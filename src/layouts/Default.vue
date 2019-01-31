@@ -7,6 +7,7 @@
       <nav class="nav">
         <g-link class="nav__link" :to="{ name: 'home' }">Home</g-link>
         <g-link class="nav__link" :to="{ name: 'artists' }">Artists</g-link>
+        <g-link class="nav__link" :to="{ name: 'news' }">News</g-link>
       </nav>
     </header>
     <slot/>
@@ -15,17 +16,12 @@
 </template>
 
 <script>
-
 export default {
   
 }
 </script>
 
 <style>
-@import './../../node_modules/@glidejs/glide/dist/css/glide.core.min.css';
-@import './../../node_modules/@glidejs/glide/dist/css/glide.theme.min.css';
-@import './../../node_modules/uikit/dist/css/uikit.min.css';
-@import './../../node_modules/bulma/css/bulma.css';
 
 body {
   font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif

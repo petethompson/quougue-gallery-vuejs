@@ -1,8 +1,6 @@
 <template>
   <Layout>
     <HomeSlides/>
-    <div class="content">
-    </div>
   </Layout>
 </template>
 

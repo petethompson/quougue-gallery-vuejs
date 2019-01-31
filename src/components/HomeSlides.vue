@@ -55,6 +55,8 @@ export default {
 </script>
 
 <style>
+  @import './../../node_modules/@glidejs/glide/dist/css/glide.core.min.css';
+  @import './../../node_modules/@glidejs/glide/dist/css/glide.theme.min.css';
   .glide {
     width: 600px;
     margin: 0 auto;
