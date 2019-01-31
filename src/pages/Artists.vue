@@ -40,9 +40,7 @@ query Artists ($page: Int ) {
 }
 </page-query>
 
-
 <script>
-
 export default {
   
 }
