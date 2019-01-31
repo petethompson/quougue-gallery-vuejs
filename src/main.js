@@ -10,11 +10,11 @@ export default function (Vue, { head }) {
 
   head.script.push({
     href: 'https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js',
-    // async: true
+    async: true
   })
   head.script.push({
     href: 'https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js',
-    // async: true
+    async: true
   })
 
   head.link.push({

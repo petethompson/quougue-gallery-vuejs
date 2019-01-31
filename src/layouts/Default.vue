@@ -2,7 +2,7 @@
   <div class="layout">
     <header class="header">
       <strong>
-        <g-link :to="{ name: 'home' }">Gridsome</g-link>
+        <g-link :to="{ name: 'home' }">Quogue Gallery</g-link>
       </strong>
       <nav class="nav">
         <g-link class="nav__link" :to="{ name: 'home' }">Home</g-link>
@@ -27,7 +27,7 @@ body {
   font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif
 }
 .layout {
-  max-width: 600px;
+  max-width: 1200px;
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
