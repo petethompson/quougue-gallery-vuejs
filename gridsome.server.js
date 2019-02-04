@@ -13,6 +13,33 @@ const slugify = function (str) {
 
 module.exports = function (api) {
   api.loadSource(async store => {
+    const exhibitions = await axios.get('http://dev.quoguegallery.com/wp-json/wp/v2/exhibition')
+
+    const contentTypeHome = store.addContentType({
+      typeName: 'Exhibition'
+    })
+
+    var exhibitionsdata = Array.from(exhibitions.data)
+
+    for (const exhibition of exhibitionsdata) {
+      let feat_image = await axios.get(exhibition._links['wp:featuredmedia'][0].href)
+
+      contentTypeHome.addNode({
+        title: exhibition.title.rendered,
+        fields: {
+          start_date: exhibition.acf.exhibition_start_date,
+          end_date: exhibition.acf.exhibition_end_date,
+          reception_date: exhibition.acf.artist_reception_date,
+          featured_image: feat_image.data.source_url
+        }
+      })
+    }
+    
+
+  })
+
+
+  api.loadSource(async store => {
     const homeslides = await axios.get('https://artcloudgalleryapi.azurewebsites.net//Artwork?tag=homepage', {
       headers: {
         'Authorization': auth
