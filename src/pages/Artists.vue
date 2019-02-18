@@ -1,9 +1,7 @@
 <template>
   <Layout>
     <div>
-
       <div class="uk-grid-small uk-text-center uk-grid" uk-grid="masonry: true">
-        
           <div v-for="{ node } in $page.allArtist.edges" :key="node.id" class="uk-width-1-3">
             <div class="uk-card  uk-card-hover uk-card-body ">
               <h2 v-html="node.title"/>
@@ -14,7 +12,6 @@
               </g-link>
             </div>
           </div>
-
       </div>
     </div>
   </Layout>

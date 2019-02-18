@@ -1,5 +1,6 @@
 const axios = require('axios')
 const auth = "artcloud 53f022d2483ddaed76bd96c6fb1d9f621514b4c7"
+const moment = require('moment')
 
 const slugify = function (str) {
   var name = str.toLowerCase();
@@ -10,25 +11,35 @@ const slugify = function (str) {
   .replace('é', 'e');
   return name;
 }
+const convertDate = function (timestamp) {
+  var theDate = moment(timestamp).format('LL')  
+}
 
 module.exports = function (api) {
   api.loadSource(async store => {
-    const exhibitions = await axios.get('http://dev.quoguegallery.com/wp-json/wp/v2/exhibition')
+    const exhibitions = await axios.get('https://quoguegallery.com/wp-json/wp/v2/exhibition')
+    .catch(function(err){
+      console.log(err)
+    })
 
     const contentTypeHome = store.addContentType({
-      typeName: 'Exhibition'
+      typeName: 'Exhibition',
+      route: '/exhibitions/:slug'
     })
 
     var exhibitionsdata = Array.from(exhibitions.data)
 
     for (const exhibition of exhibitionsdata) {
       let feat_image = await axios.get(exhibition._links['wp:featuredmedia'][0].href)
-
+      let startDate = exhibition.acf.exhibition_start_date
+      let endDate = exhibition.acf.exhibition_end_date
+     
+      
       contentTypeHome.addNode({
         title: exhibition.title.rendered,
         fields: {
-          start_date: exhibition.acf.exhibition_start_date,
-          end_date: exhibition.acf.exhibition_end_date,
+          start_date: startDate,
+          end_date: endDate,
           reception_date: exhibition.acf.artist_reception_date,
           featured_image: feat_image.data.source_url
         }

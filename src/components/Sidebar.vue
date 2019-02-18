@@ -1,23 +1,19 @@
 <template>
-  <div class="tile is-parent is-vertical">
-    <div class="card">
-      <header class="card-header">
-        <p class="card-header-title">Categories</p>
-      </header>
-      <div class="card-content">
-        <div class="content">
-          <CategoriesList />
-        </div>
+  <div class="">
+    <div class="uk-card uk-card-default uk-card-small uk-card-body">
+      <div class="uk-card-header">
+        <h3 class="uk-card-title">Categories</h3>
+      </div>    
+      <div class="uk-card-body">
+        <CategoriesList />
       </div>
     </div>
-    <div class="card">
-      <div class="card-header">
-        <p class="card-header-title">Recent Posts</p>
+    <div class="uk-card uk-card-default uk-card-small uk-card-body">
+      <div class="uk-card-header">
+        <h3 class="uk-card-title">Recent Posts</h3>
       </div>
-      <div class="card-content">
-        <div class="content">
-          <RecentPosts />
-        </div>
+      <div class="uk-card-body">
+        <RecentPosts />
       </div>
     </div>
   </div>
@@ -40,14 +36,3 @@ export default {
   }
 }
 </script>
-<style>
-  .content ul {
-    padding: 0;
-    margin: 0;
-  }
-  ul li {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
-</style>

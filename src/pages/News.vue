@@ -1,13 +1,12 @@
 <template>
   <Layout>
-    <div>    
       <h1 class="uk-h1">News</h1>
 
       <Pager :info="$page.allWordPressPost.pageInfo"/>
 
-      <div class="section">
-        <div class="tile is-ancestor">
-          <div class="tile is-8">
+      <div class="uk-grid-small uk-grid" uk-grid="masonry: true">
+        <div class="uk-width-2-3">
+          <div class="uk-card">
             <ul>
               <li class="post" v-for="{ node } in $page.allWordPressPost.edges" :key="node._id">
                 <h2 class="uk-h2" v-html="node.title"/>
@@ -17,12 +16,15 @@
               </li>
             </ul>
           </div>
-          <div class="tile is-parent">
+        </div>
+        
+        <div class="uk-width-1-3">
+          <div class="uk-card">
             <Sidebar></Sidebar>
           </div>
         </div>
+          
       </div>
-    </div>
   </Layout>
 </template>
 
